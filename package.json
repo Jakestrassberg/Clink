@@ -1,0 +1,26 @@
+{
+  "name": "clink",
+  "version": "1.0.0",
+  "description": "A command line tool for work hour tracking and invoice creation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Strassberg",
+  "license": "ISC",
+  "dependencies": {
+    "asciichart": "^1.5.25",
+    "chalk": "^3.0.0",
+    "exceljs": "^3.8.0",
+    "express-handlebars": "^3.1.0",
+    "figlet": "^1.3.0",
+    "html-pdf": "^2.2.0",
+    "inquirer": "^7.0.4",
+    "log-update": "^4.0.0",
+    "moment": "^2.24.0",
+    "prompt": "^1.0.0",
+    "xlsx": "^0.15.5",
+    "xlsx-style": "^0.8.13"
+  }
+}

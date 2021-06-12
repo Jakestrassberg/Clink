@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		h1{
+            font-family: 'Open Sans', sans-serif;
+			font-size: 32px;
+        }
+        p {
+            font-family: 'Open Sans', sans-serif;
+			font-size: 20px;
+        }
+        table, th, td {
+            border: 1px solid #e8e8e8;
+            border-collapse: collapse;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+			padding: 5px;
+        }
+		tr:nth-child(even) {
+			background-color: #f7f7f7;
+		}
+		td {
+			height:30px;
+		}
+	</style>
+</head>
+
+<body style="padding: 50px ">
+	<div style="padding-bottom: 20px; border-bottom: 1px solid #e8e8e8">
+		<img style="height:128px; width:128px" src="logo.jpg">
+		<div style="display: inline-block; float: right">
+			<h1 style="float: right">INVOICE</h1></br>
+			<p style="float:right">John Doe Industries</p>
+		</div>
+	</div>
+	<div style="margin-top:50px">
+		<div style="display:inline-block">
+			<p>BILL TO</p>
+			<p><strong>John Doe</strong></p>
+		</div>
+		<div style="float:right">
+			<p><strong>Invoice Number: </strong>{{invoiceNumber}}</p>
+			<p><strong>Invoice Date: </strong>{{invoiceDate}}</p>
+			<p><strong>Total Amount Due: </strong>{{amountDue}}</p>
+		</div>
+	</div>
+	<div style="height: 800px;">
+		<table style="width:100%; margin:auto; margin-top:50px;">
+			<tr style="background-color:#57bafe">
+				<td>Date Started</td>
+				<td>Task</td>
+				<td>Hours</td>
+				<td>Amount Due</td>
+			</tr>
+			{{#taskData}}
+			<tr>
+				<td>{{"Date Started"}}</td>
+				<td>{{Task}}</td>
+				<td>{{Hours}}</td>
+				<td>{{Amount}}</td>
+			</tr>
+			{{/taskData}}
+		</table>
+	</div>
+	<div>
+		<div style="display:inline-block; background-color:#f7f7f7; padding:10px">
+			<p><strong>Routing Number: </strong>#########</p>
+			<p><strong>Account Number: </strong>#########</p>
+			<p><strong>Address: </strong>1111 Example St. 10000</p>
+		</div>
+		<div style="margin-top: 75px; float:right">
+			<p><strong>Total Amount Due: </strong>{{amountDue}}</p>
+		</div>
+	</div>
+</body>
+</html>
