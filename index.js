@@ -399,13 +399,7 @@ function mainPrompt(message, data, dataBeforeLastEdit) {
 }
 
 function init() {
-	// Have to make the tracking file if it isn't already there
-	try {
-		var workbook = XLSX.readFile('work_tracking.xlsx', {});
-	} catch {
-		fs.copyFileSync(__dirname + '/work_tracking_empty.xlsx', __dirname + '/work_tracking.xlsx')
-		var workbook = XLSX.readFile('work_tracking.xlsx', {});
-	}
+	var workbook = XLSX.readFile('work_tracking.xlsx', {});
 	var sheetNames = workbook.SheetNames
 	var currentDateFormatted = moment().format('MM-DD-YY')
 

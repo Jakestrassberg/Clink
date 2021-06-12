@@ -10,6 +10,7 @@ const convertJSDateToExcelDate = (date) =>{
 }
 
 function saveWorksheet(data) {
+	console.log(data)
 	// We have to make a copy or bad things will happen
 	var taskData = JSON.parse(JSON.stringify(data))
 	var workbook = XLSX.readFile('work_tracking.xlsx');
@@ -19,7 +20,6 @@ function saveWorksheet(data) {
 	workbook.Sheets['Current Invoice Period'] = XLSX.utils.json_to_sheet(taskData)
 
 	for (var i = 2; i < Object.keys(workbook.Sheets['Current Invoice Period']).length; i++) {
-
 		// Format the 'Amount' column
 		if (workbook.Sheets['Current Invoice Period'][`D${i}`]) {
 			workbook.Sheets['Current Invoice Period'][`D${i}`].z = '$0.00' // Set the formatting
@@ -102,7 +102,7 @@ function saveWorksheet(data) {
 	workbook.Sheets['All Invoices'].G1.s = { font: { bold: true } }
 	
 	workbook.Sheets['All Invoices']['!cols'] = wscols;
-	XLSXStyle.writeFile(workbook, 'work_tracking.xlsx') // Using the other Excel Library
+	XLSXStyle.writeFile(workbook, 'work_tracking.xlsx') // Notice were using XLSXStyle not XLSX
 }
 
 module.exports = {
