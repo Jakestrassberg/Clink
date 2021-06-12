@@ -419,12 +419,12 @@ function init() {
 
 	if (!fs.existsSync('./work_tracking_backups')) {
 		fs.mkdirSync('./work_tracking_backups', { recursive: true });
-		fs.copyFile('./work_tracking.xlsx', `./work_tracking_backups/${backupFileName}.xlsx`, function (err) {
-			if (err) {
-				console.log("Couldn't backup Excel sheet: ", err)
-			}
-		})
 	}
+	fs.copyFile('./work_tracking.xlsx', `./work_tracking_backups/${backupFileName}.xlsx`, function (err) {
+		if (err) {
+			console.log("Couldn't backup Excel sheet: ", err)
+		}
+	})
 
 	// Fix the formatting
 	var data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetNames[0]])
